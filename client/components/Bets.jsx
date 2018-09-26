@@ -16,7 +16,6 @@ class Bets extends React.Component {
   }
 
   componentDidMount () {
-    console.log('hello')
     this.fetchBets()
   }
 

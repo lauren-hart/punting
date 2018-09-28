@@ -1,7 +1,7 @@
-// import {combineReducers} from 'redux'
+import {combineReducers} from 'redux'
 
-// import bets from './bets'
+import bets from './bets'
 
-// export default combineReducers({
-//   bets
-// })
+export default combineReducers({
+  bets
+})

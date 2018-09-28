@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 // import {Link} from 'react-router-dom'
 import {fetchBets} from '../actions'
-import {getBets} from '../apiClient'
+// import {getBets} from '../apiClient'
 
 class Bets extends React.Component {
   constructor (props) {
@@ -18,7 +18,7 @@ class Bets extends React.Component {
   }
 
   componentDidMount () {
-    fetchBets()
+    this.props.dispatch(fetchBets())
   }
 
   // fetchBets () {
@@ -115,4 +115,10 @@ class Bets extends React.Component {
   }
 }
 
-export default connect()(Bets)
+const mapStateToProps = (state) => {
+  return {
+    bets: state.bets
+  }
+}
+
+export default connect(mapStateToProps)(Bets)

@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     <Provider store={store}>
       <Router>
         <App />
-      </Router>,
-    // </Provider>,
+      </Router>
+    </Provider>,
     document.getElementById('app'))
 })
 

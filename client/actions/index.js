@@ -2,11 +2,11 @@
 
 // export const SHOW_ERROR = 'SHOW_ERROR'
 // export const RECEIVE_BETS = 'RECEIVE_BETS'
-// export const REQUEST_POSTS = 'REQUEST_POSTS'
+// export const REQUEST_BETS = 'REQUEST_BETS'
 
-// export const requestPosts = () => {
+// export const requestBets = () => {
 //   return {
-//     type: REQUEST_POSTS
+//     type: REQUEST_BETS
 //   }
 // }
 
@@ -26,13 +26,13 @@
 //   }
 // }
 
-// export function fetchPosts (subreddit) {
+// export function fetchBets () {
 //   return (dispatch) => {
-//     dispatch(requestPosts())
+//     dispatch(requestBets())
 //     return request
-//       .get(`/api/v1/reddit/subreddit/${subreddit}`)
+//       .get(`/api/v1/bets`)
 //       .then(res => {
-//         dispatch(receivePosts(res.body))
+//         dispatch(receiveBets(res.body))
 //       })
 //       .catch(err => {
 //         dispatch(showError(err.message))

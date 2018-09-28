@@ -1,30 +1,31 @@
 import React from 'react'
 
-import {Link} from 'react-router-dom'
-import {getBets} from '../apiClient'
+// import {Link} from 'react-router-dom'
+import {fetchBets} from '../actions'
+// import {getBets} from '../apiClient'
 
 class Bets extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      bets: []
-    }
-    this.fetchBets = this.fetchBets.bind(this)
-    this.percentColour = this.percentColour.bind(this)
-    this.didBetWin = this.didBetWin.bind(this)
-    this.betPercentage = this.betPercentage.bind(this)
-  }
+  // constructor (props) {
+  //   super(props)
+  //   this.state = {
+  //     bets: []
+  //   }
+  //   this.fetchBets = this.fetchBets.bind(this)
+  //   this.percentColour = this.percentColour.bind(this)
+  //   this.didBetWin = this.didBetWin.bind(this)
+  //   this.betPercentage = this.betPercentage.bind(this)
+  // }
 
   componentDidMount () {
-    this.fetchBets()
+    fetchBets()
   }
 
-  fetchBets () {
-    return getBets()
-      .then(bets => {
-        this.setState({bets: bets})
-      })
-  }
+  // fetchBets () {
+  //   return getBets()
+  //     .then(bets => {
+  //       this.setState({bets: bets})
+  //     })
+  // }
 
   percentColour (betPercentage) {
     const red = {background: '#EE3239', color: 'white'}
@@ -64,45 +65,51 @@ class Bets extends React.Component {
   }
 
   render () {
+    // const {bets} = this.props
+    // console.log(bets)
+
     // RETRIEVING DATA FROM BETS TABLE ------------------------------------
-    const bet = this.state.bets.map(bet => {
-      const betPercent = (bet.amountWon / bet.amountBet) * 100
+    // const bet = this.state.bets.map(bet => {
+    //   const betPercent = (bet.amountWon / bet.amountBet) * 100
 
-      return <div key={bet.id}>
-        <div className="bet-row">
-        </div>
-        <div className="row">
-          <div className="col-md-2"><p>{bet.couple}</p></div>
-          <div className="col-md-2"><p>{bet.person}</p></div>
-          <div className="col-md-2"><p>{bet.bet}</p></div>
-          <div className="col-md-2"><p>${Number(bet.amountBet).toFixed(2)}</p></div>
-          <div className="col-md-2"><p>{this.didBetWin(bet.amountWon)}</p></div>
-          <div className="col-md-2"><p className="percent" style={this.percentColour(betPercent)}>
-            {this.betPercentage(betPercent)}%</p>
-          </div>
+    //   return <div key={bet.id}>
+    //     <div className="bet-row">
+    //     </div>
+    //     <div className="row">
+    //       <div className="col-md-2"><p>{bet.couple}</p></div>
+    //       <div className="col-md-2"><p>{bet.person}</p></div>
+    //       <div className="col-md-2"><p>{bet.bet}</p></div>
+    //       <div className="col-md-2"><p>${Number(bet.amountBet).toFixed(2)}</p></div>
+    //       <div className="col-md-2"><p>{this.didBetWin(bet.amountWon)}</p></div>
+    //       <div className="col-md-2"><p className="percent" style={this.percentColour(betPercent)}>
+    //         {this.betPercentage(betPercent)}%</p>
+    //       </div>
 
-        </div>
-      </div>
-    })
+    //     </div>
+    //   </div>
+    // })
 
     return (
-      <div className="container-fluid">
-        <h1 className='header'>Bets</h1>
-        <div className='nav'>
-          <Link to="/"><button className="button">Home</button></Link>
-          <Link to="/addbet"><button>Add Bet</button></Link>
-          <Link to="/datacheck"><button>Data Check</button></Link>
-        </div>
-        <div className="row">
-          <div className="col-md-2"><h5 className="heading">Couple</h5></div>
-          <div className="col-md-2"><h5 className="heading">Person</h5></div>
-          <div className="col-md-2"><h5 className="heading">Bet</h5></div>
-          <div className="col-md-2"><h5 className="heading">$ Bet</h5></div>
-          <div className="col-md-2"><h5 className="heading">$ Won</h5></div>
-          <div className="col-md-2"><h5 className="heading">Percentage</h5></div>
-        </div>
-        <div>{bet}</div>
+      <div>
+        <p>Hi</p>
       </div>
+      // <div className="container-fluid">
+      //   <h1 className='header'>Bets</h1>
+      //   <div className='nav'>
+      //     <Link to="/"><button className="button">Home</button></Link>
+      //     <Link to="/addbet"><button>Add Bet</button></Link>
+      //     <Link to="/datacheck"><button>Data Check</button></Link>
+      //   </div>
+      //   <div className="row">
+      //     <div className="col-md-2"><h5 className="heading">Couple</h5></div>
+      //     <div className="col-md-2"><h5 className="heading">Person</h5></div>
+      //     <div className="col-md-2"><h5 className="heading">Bet</h5></div>
+      //     <div className="col-md-2"><h5 className="heading">$ Bet</h5></div>
+      //     <div className="col-md-2"><h5 className="heading">$ Won</h5></div>
+      //     <div className="col-md-2"><h5 className="heading">Percentage</h5></div>
+      //   </div>
+      //   <div>{bet}</div>
+      // </div>
     )
   }
 }

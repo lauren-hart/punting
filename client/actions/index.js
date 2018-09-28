@@ -33,6 +33,7 @@
 //       .get(`/api/v1/bets`)
 //       .then(res => {
 //         dispatch(receiveBets(res.body))
+//         console.log('success', res.body)
 //       })
 //       .catch(err => {
 //         dispatch(showError(err.message))

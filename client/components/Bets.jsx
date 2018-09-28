@@ -1,20 +1,21 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
 // import {Link} from 'react-router-dom'
 import {fetchBets} from '../actions'
-// import {getBets} from '../apiClient'
+import {getBets} from '../apiClient'
 
 class Bets extends React.Component {
-  // constructor (props) {
-  //   super(props)
-  //   this.state = {
-  //     bets: []
-  //   }
-  //   this.fetchBets = this.fetchBets.bind(this)
-  //   this.percentColour = this.percentColour.bind(this)
-  //   this.didBetWin = this.didBetWin.bind(this)
-  //   this.betPercentage = this.betPercentage.bind(this)
-  // }
+  constructor (props) {
+    super(props)
+    this.state = {
+      bets: []
+    }
+    this.fetchBets = this.fetchBets.bind(this)
+    this.percentColour = this.percentColour.bind(this)
+    this.didBetWin = this.didBetWin.bind(this)
+    this.betPercentage = this.betPercentage.bind(this)
+  }
 
   componentDidMount () {
     fetchBets()
@@ -114,4 +115,4 @@ class Bets extends React.Component {
   }
 }
 
-export default Bets
+export default connect()(Bets)

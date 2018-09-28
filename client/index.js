@@ -15,9 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Provider store={store}>
       <Router>
-        <div>
-          <App />
-        </div>
+        <App />
       </Router>,
     // </Provider>,
     document.getElementById('app'))

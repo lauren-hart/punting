@@ -5,12 +5,12 @@ const rootUrl = 'http://localhost:3000/api/v1/bets'
 // Bets.jsx has called getBets function
 // This function is requesting from the
 // api/v1/bets route on the back end
-export function getBets () {
-  return request.get(rootUrl)
-    .then(res => {
-      return res.body.bets
-    })
-}
+// export function getBets () {
+//   return request.get(rootUrl)
+//     .then(res => {
+//       return res.body.bets
+//     })
+// }
 
 // AddBet.jsx has called addBets function and
 // passed it a parameter bets (this is the new

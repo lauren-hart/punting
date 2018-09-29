@@ -36,6 +36,9 @@ router.get('/', (req, res) => {
     .then(bets => {
       res.json({bets})
     })
+    .catch(err => {
+      res.status(500).send('Database Error: ' + err.message)
+    })
 })
 
 // API client has sent a betID through params

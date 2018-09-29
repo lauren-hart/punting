@@ -11,14 +11,14 @@ class Bets extends React.Component {
     this.state = {
       bets: []
     }
-    this.fetchBets = this.fetchBets.bind(this)
+    // this.fetchBets = this.fetchBets.bind(this)
     this.percentColour = this.percentColour.bind(this)
     this.didBetWin = this.didBetWin.bind(this)
     this.betPercentage = this.betPercentage.bind(this)
   }
 
   componentDidMount () {
-    this.props.dispatch(fetchBets())
+    fetchBets()
   }
 
   // fetchBets () {
@@ -92,7 +92,7 @@ class Bets extends React.Component {
 
     return (
       <div>
-        <p>Hi</p>
+        <h1>Hi</h1>
       </div>
       // <div className="container-fluid">
       //   <h1 className='header'>Bets</h1>
